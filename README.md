@@ -51,7 +51,6 @@ The Power BI dashboard has five KPI cards and four visuals:
 
 > Overall sales come to roughly ₹2.5M. The converted USD figure is an estimate and should be confirmed with a converted-total card in Power BI.
 
-*Add a dashboard screenshot here, for example:* `![Dashboard](images/dashboard.png)`
 
 ## Key Insights
 
