@@ -184,8 +184,7 @@ Bengaluru leads the city ranking with 57 orders, followed by Hyderabad (33), Thi
 
 Maharashtra, Tamil Nadu, and Karnataka form the next tier of states by order volume, with 73, 70, and 68 orders respectively.
 
-Some overseas locations, including Singapore, England, Georgia, and Texas, show high sales values despite relatively few orders. This suggests that a small number of high-value orders can have a substantial impact on sales. fileciteturn0file0L75-L99
-
+Some overseas locations, including Singapore, England, Georgia, and Texas, show high sales values despite relatively few orders. This suggests that a small number of high-value orders can have a substantial impact on sales.
 
 🧮 DAX Measures
 
