@@ -176,15 +176,25 @@ The visuals use sales and order measures with Top N filtering where applicable. 
 
 🔍 Key Business Insights
 
-India is the main market, and the leading country has approximately ₹1.35M in sales.
+Sales by Country (map)
 
-Kerala leads domestic performance, with 235 orders and approximately ₹363K in sales.
+Sales come from a small set of countries, and India is the main one. The Top Country Sales card shows ₹1.35M for the leading country, out of 24 countries in total.
+The US, UK, Australia and Singapore also have sales, so the overseas business is spread across several markets. Those markets could be grown with targeted campaigns.
 
-Bengaluru leads the city ranking with 57 orders, followed by Hyderabad (33), Thiruvananthapuram (28), and Thrissur (27).
+Top 10 States by Sales (treemap)
 
-Maharashtra, Tamil Nadu, and Karnataka form the next tier of states by order volume, with 73, 70, and 68 orders respectively.
+Kerala leads with ₹363K, but Singapore comes second with ₹211K from only 4 orders. That is about ₹53K per order, against roughly ₹1.5K per order in Kerala.
+England (₹138K), Georgia (₹57K) and Texas (₹53K) also make the top 10 with only a handful of orders each. A few large overseas orders are worth more than many small local ones, so international bulk or high-value orders deserve attention.
 
-Some overseas locations, including Singapore, England, Georgia, and Texas, show high sales values despite relatively few orders. This suggests that a small number of high-value orders can have a substantial impact on sales.
+Top 10 Cities by Orders
+
+Bengaluru leads with 57 orders, followed by Hyderabad (33), Thiruvananthapuram (28) and Thrissur (27). Metro cities and Kerala towns drive most of the order volume.
+Order counts drop quickly after the top few cities, from 57 to 14 across the top 10. Cities such as Pune, Delhi and Ernakulam, with 14 to 17 orders each, are good targets for delivery and marketing improvements.
+
+Top 10 States by Orders
+
+Kerala has 235 orders, more than three times the next state (Maharashtra, 73), so the business depends heavily on one state.
+Maharashtra (73), Tamil Nadu (70) and Karnataka (68) form a close second tier. States from Gujarat down (17 to 14 orders) are far behind, which is the largest growth gap.
 
 🧮 DAX Measures
 
