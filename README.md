@@ -92,6 +92,144 @@ The Power BI dashboard has five KPI cards and four visuals:
 - Monthly totals add each month across years: January to May include 2026 (four years) while June to December cover three years.
 - Retail sales in the UAE are outside this dataset.
 
+Padanjaly Geographical Sales Performance Dashboard
+
+📊 Project Overview
+
+This project analyzes Padanjaly's geographical sales performance using Power BI Desktop and a cleaned WooCommerce order-export dataset. The dashboard explores sales and order distribution across countries, states/regions, and cities to identify leading markets, underperforming locations, and growth opportunities.
+
+The analysis covers 269 cities, 73 states or regions, and 24 countries. India is the main market, with Kerala contributing the highest order volume. A small number of high-value international orders also contribute significantly to sales. fileciteturn0file0L4-L10
+
+🎯 Project Objectives
+
+Analyze sales by country, state/region, and city.
+
+Identify high- and low-performing geographical locations.
+
+Compare sales value with order volume.
+
+Highlight regional growth opportunities.
+
+Provide actionable recommendations for marketing and sales planning.
+
+🛠️ Tools & Technologies
+
+Power BI Desktop — dashboard creation and visualization
+
+DAX — KPI measures and calculations
+
+Power Query — data cleaning and preparation
+
+Excel — source order-export data
+
+📌 Dashboard KPIs
+
+KPI
+
+Description
+
+Reported Value
+
+Total Countries
+
+Unique countries represented in the cleaned order data
+
+24
+
+Total States
+
+Unique states or regions represented in the cleaned order data
+
+73
+
+Total Cities
+
+Unique cities represented in the cleaned order data
+
+269
+
+Top Country Sales
+
+Sales value for the leading country
+
+₹1.35M
+
+These values are reported in the project analysis. fileciteturn0file0L8-L16
+
+📈 Dashboard Visuals
+
+The report uses four main visuals:
+
+Sales by Country — Filled Map
+Shows the geographical distribution of sales by country.
+
+Top 10 States by Sales — Treemap
+Compares sales value across the leading states/regions.
+
+Top 10 Cities by Orders — Clustered Column Chart
+Highlights cities with the highest order counts.
+
+Top 10 States by Orders — Clustered Bar Chart
+Compares order volume across the leading states/regions.
+
+The visuals use sales and order measures with Top N filtering where applicable. fileciteturn0file0L63-L69
+
+🔍 Key Business Insights
+
+India is the main market, and the leading country has approximately ₹1.35M in sales.
+
+Kerala leads domestic performance, with 235 orders and approximately ₹363K in sales.
+
+Bengaluru leads the city ranking with 57 orders, followed by Hyderabad (33), Thiruvananthapuram (28), and Thrissur (27).
+
+Maharashtra, Tamil Nadu, and Karnataka form the next tier of states by order volume, with 73, 70, and 68 orders respectively.
+
+Some overseas locations, including Singapore, England, Georgia, and Texas, show high sales values despite relatively few orders. This suggests that a small number of high-value orders can have a substantial impact on sales. fileciteturn0file0L75-L99
+
+
+🧮 DAX Measures
+
+The report documents the following KPI logic. Update the table and column names if they differ in your Power BI model.
+
+Total Countries
+
+Total Countries =
+DISTINCTCOUNT(
+    'padanjaly-order export cleaned'[billing_country_clean]
+)
+
+Total States
+
+Total States =
+DISTINCTCOUNT(
+    'padanjaly-order export cleaned'[billing_state_clean]
+)
+
+Total Cities
+
+Total Cities =
+DISTINCTCOUNT(
+    'padanjaly-order export cleaned'[billing_city_clean]
+)
+
+Top Country Sales
+
+This measure assumes that a [Total sales] measure already exists.
+
+Top Country Sales =
+MAXX(
+    VALUES(
+        'padanjaly-order export cleaned'[billing_country_clean]
+    ),
+    CALCULATE([Total sales])
+)
+
+
+📝 Conclusion
+
+Padanjaly has a strong sales and order base in Kerala, supported by order activity in major Indian cities and a smaller number of high-value overseas transactions. The key opportunities are to broaden domestic reach, strengthen mid-tier locations, and turn international high-value orders into repeatable business.
+
+
 ## Author
 
 **Kartik**
