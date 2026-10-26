@@ -92,15 +92,15 @@ The Power BI dashboard has five KPI cards and four visuals:
 - Monthly totals add each month across years: January to May include 2026 (four years) while June to December cover three years.
 - Retail sales in the UAE are outside this dataset.
 
-Padanjaly Geographical Sales Performance Dashboard
+##Padanjaly Geographical Sales Performance Dashboard
 
-Project Overview
+##Project Overview
 
 This project analyzes Padanjaly's geographical sales performance using Power BI Desktop and a cleaned WooCommerce order export. The dashboard explores sales and order distribution across countries, states/regions, and cities, helping identify strong markets, growth opportunities, and delivery patterns.
 
 The analysis covers 690 orders across 269 cities, 73 states or regions, and 24 countries. India is the main market, with Kerala leading domestic order volume. Although international orders represent a smaller share of order volume, they contribute a substantial share of total order value.
 
-Dashboard KPIs
+##Dashboard KPIs
 
 Total Cities: 269
 
@@ -110,7 +110,7 @@ Total Countries: 24
 
 Top Country Sales: ₹1.35M
 
-Dashboard Visuals
+##Dashboard Visuals
 
 The single-page dashboard contains six visuals:
 
@@ -126,7 +126,7 @@ Billing City vs Shipping City — Donut chart showing whether the billing and sh
 
 India vs International Orders — Pie chart comparing domestic and international order counts.
 
-Key Insights
+##Key Insights
 
 Kerala is the leading state, with 235 orders, followed by Maharashtra (73), Tamil Nadu (70), and Karnataka (68).
 
@@ -140,7 +140,7 @@ International orders contribute 46.5% of total order value. Their average order 
 
 Sales are concentrated in Kerala, creating an opportunity to expand in other Indian states and develop international markets.
 
-Recommendations
+##Recommendations
 
 Expand domestic marketing in Maharashtra, Tamil Nadu, Karnataka, and Telangana to reduce dependence on Kerala.
 
@@ -152,48 +152,18 @@ Track international revenue, average order value, and repeat purchases by countr
 
 Periodically review the small number of orders where billing and shipping cities differ.
 
-Tools & Technologies
-
-Power BI Desktop — data modeling, DAX calculations, and dashboard visualization
-
-Power Query — data cleaning and preparation
-
-DAX — KPI measures and calculated columns
-
-Excel — source order-export data
-
-Data Preparation and Calculations
-
-The dashboard uses a cleaned order-export table named padanjaly-order export cleaned. DAX measures calculate the headline KPIs, while calculated columns classify orders by:
-
-Billing and shipping city match (city_match)
-
-Domestic versus international shipping region (Region Type)
-
-How to Use
-
-Download or clone this repository.
-
-Open the Power BI .pbix file in Power BI Desktop.
-
-If prompted, update the source-data path to the location of the cleaned order-export file.
-
-Refresh the data to update the dashboard.
-
-Use the dashboard visuals to explore geographical sales performance.
-
-
-Business Conclusion
+##Business Conclusion
 
 Padanjaly has a strong domestic base in Kerala, while international orders represent a significant revenue opportunity despite their lower volume. Expanding into additional Indian states and building repeatable international sales channels are the key opportunities identified by this dashboard.
-
-## Author
-
-**Kartik**
-Aspiring Data Analyst | Python, SQL, Power BI, Excel
-[LinkedIn](www.linkedin.com/in/kartik-gv)
 
 ## Sources
 
 - Padanjali Ayurvedic (P) Ltd. About page: https://www.padanjaly.com/about-us/
 - Padanjali Ayurvedic (P) Ltd. Home page: https://www.padanjaly.com/
+
+## Author
+
+**Kartik**
+Aspiring Data Analyst
+[LinkedIn](www.linkedin.com/in/kartik-gv)
+
