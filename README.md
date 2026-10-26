@@ -94,150 +94,98 @@ The Power BI dashboard has five KPI cards and four visuals:
 
 Padanjaly Geographical Sales Performance Dashboard
 
-📊 Project Overview
+Project Overview
 
-This project analyzes Padanjaly's geographical sales performance using Power BI Desktop and a cleaned WooCommerce order-export dataset. The dashboard explores sales and order distribution across countries, states/regions, and cities to identify leading markets, underperforming locations, and growth opportunities.
+This project analyzes Padanjaly's geographical sales performance using Power BI Desktop and a cleaned WooCommerce order export. The dashboard explores sales and order distribution across countries, states/regions, and cities, helping identify strong markets, growth opportunities, and delivery patterns.
 
-The analysis covers 269 cities, 73 states or regions, and 24 countries. India is the main market, with Kerala contributing the highest order volume. A small number of high-value international orders also contribute significantly to sales. fileciteturn0file0L4-L10
+The analysis covers 690 orders across 269 cities, 73 states or regions, and 24 countries. India is the main market, with Kerala leading domestic order volume. Although international orders represent a smaller share of order volume, they contribute a substantial share of total order value.
 
-🎯 Project Objectives
+Dashboard KPIs
 
-Analyze sales by country, state/region, and city.
+Total Cities: 269
 
-Identify high- and low-performing geographical locations.
+Total States/Regions: 73
 
-Compare sales value with order volume.
+Total Countries: 24
 
-Highlight regional growth opportunities.
+Top Country Sales: ₹1.35M
 
-Provide actionable recommendations for marketing and sales planning.
+Dashboard Visuals
 
-🛠️ Tools & Technologies
+The single-page dashboard contains six visuals:
 
-Power BI Desktop — dashboard creation and visualization
+Sales by Country — Filled map showing sales distribution by country.
 
-DAX — KPI measures and calculations
+Sales by State/Region — Treemap highlighting the top 10 locations by sales.
+
+Top 10 Cities by Orders — Clustered column chart comparing order volume.
+
+Top 10 States by Orders — Clustered bar chart comparing order volume.
+
+Billing City vs Shipping City — Donut chart showing whether the billing and shipping cities match.
+
+India vs International Orders — Pie chart comparing domestic and international order counts.
+
+Key Insights
+
+Kerala is the leading state, with 235 orders, followed by Maharashtra (73), Tamil Nadu (70), and Karnataka (68).
+
+Bengaluru leads city-level order volume with 57 orders, followed by Hyderabad (33), Thiruvananthapuram (28), and Thrissur (27).
+
+Billing and shipping cities match for 98.84% of orders (682 of 690), indicating strong location alignment.
+
+Domestic orders account for 88.3% of order volume (609 orders), while international orders account for 11.7% (81 orders).
+
+International orders contribute 46.5% of total order value. Their average order value is approximately ₹14,488, compared with ₹2,218 for domestic orders.
+
+Sales are concentrated in Kerala, creating an opportunity to expand in other Indian states and develop international markets.
+
+Recommendations
+
+Expand domestic marketing in Maharashtra, Tamil Nadu, Karnataka, and Telangana to reduce dependence on Kerala.
+
+Develop high-value international markets through targeted campaigns and repeat-purchase initiatives.
+
+Improve promotions and delivery performance in mid-tier cities such as Pune, Delhi, and Ernakulam.
+
+Track international revenue, average order value, and repeat purchases by country.
+
+Periodically review the small number of orders where billing and shipping cities differ.
+
+Tools & Technologies
+
+Power BI Desktop — data modeling, DAX calculations, and dashboard visualization
 
 Power Query — data cleaning and preparation
 
+DAX — KPI measures and calculated columns
+
 Excel — source order-export data
 
-📌 Dashboard KPIs
+Data Preparation and Calculations
 
-KPI
+The dashboard uses a cleaned order-export table named padanjaly-order export cleaned. DAX measures calculate the headline KPIs, while calculated columns classify orders by:
 
-Description
+Billing and shipping city match (city_match)
 
-Reported Value
+Domestic versus international shipping region (Region Type)
 
-Total Countries
+How to Use
 
-Unique countries represented in the cleaned order data
+Download or clone this repository.
 
-24
+Open the Power BI .pbix file in Power BI Desktop.
 
-Total States
+If prompted, update the source-data path to the location of the cleaned order-export file.
 
-Unique states or regions represented in the cleaned order data
+Refresh the data to update the dashboard.
 
-73
-
-Total Cities
-
-Unique cities represented in the cleaned order data
-
-269
-
-Top Country Sales
-
-Sales value for the leading country
-
-₹1.35M
-
-These values are reported in the project analysis. fileciteturn0file0L8-L16
-
-📈 Dashboard Visuals
-
-The report uses four main visuals:
-
-Sales by Country — Filled Map
-Shows the geographical distribution of sales by country.
-
-Top 10 States by Sales — Treemap
-Compares sales value across the leading states/regions.
-
-Top 10 Cities by Orders — Clustered Column Chart
-Highlights cities with the highest order counts.
-
-Top 10 States by Orders — Clustered Bar Chart
-Compares order volume across the leading states/regions.
-
-The visuals use sales and order measures with Top N filtering where applicable. fileciteturn0file0L63-L69
-
-🔍 Key Business Insights
-
-Sales by Country (map)
-
-Sales come from a small set of countries, and India is the main one. The Top Country Sales card shows ₹1.35M for the leading country, out of 24 countries in total.
-The US, UK, Australia and Singapore also have sales, so the overseas business is spread across several markets. Those markets could be grown with targeted campaigns.
-
-Top 10 States by Sales (treemap)
-
-Kerala leads with ₹363K, but Singapore comes second with ₹211K from only 4 orders. That is about ₹53K per order, against roughly ₹1.5K per order in Kerala.
-England (₹138K), Georgia (₹57K) and Texas (₹53K) also make the top 10 with only a handful of orders each. A few large overseas orders are worth more than many small local ones, so international bulk or high-value orders deserve attention.
-
-Top 10 Cities by Orders
-
-Bengaluru leads with 57 orders, followed by Hyderabad (33), Thiruvananthapuram (28) and Thrissur (27). Metro cities and Kerala towns drive most of the order volume.
-Order counts drop quickly after the top few cities, from 57 to 14 across the top 10. Cities such as Pune, Delhi and Ernakulam, with 14 to 17 orders each, are good targets for delivery and marketing improvements.
-
-Top 10 States by Orders
-
-Kerala has 235 orders, more than three times the next state (Maharashtra, 73), so the business depends heavily on one state.
-Maharashtra (73), Tamil Nadu (70) and Karnataka (68) form a close second tier. States from Gujarat down (17 to 14 orders) are far behind, which is the largest growth gap.
-
-🧮 DAX Measures
-
-The report documents the following KPI logic. Update the table and column names if they differ in your Power BI model.
-
-Total Countries
-
-Total Countries =
-DISTINCTCOUNT(
-    'padanjaly-order export cleaned'[billing_country_clean]
-)
-
-Total States
-
-Total States =
-DISTINCTCOUNT(
-    'padanjaly-order export cleaned'[billing_state_clean]
-)
-
-Total Cities
-
-Total Cities =
-DISTINCTCOUNT(
-    'padanjaly-order export cleaned'[billing_city_clean]
-)
-
-Top Country Sales
-
-This measure assumes that a [Total sales] measure already exists.
-
-Top Country Sales =
-MAXX(
-    VALUES(
-        'padanjaly-order export cleaned'[billing_country_clean]
-    ),
-    CALCULATE([Total sales])
-)
+Use the dashboard visuals to explore geographical sales performance.
 
 
-📝 Conclusion
+Business Conclusion
 
-Padanjaly has a strong sales and order base in Kerala, supported by order activity in major Indian cities and a smaller number of high-value overseas transactions. The key opportunities are to broaden domestic reach, strengthen mid-tier locations, and turn international high-value orders into repeatable business.
-
+Padanjaly has a strong domestic base in Kerala, while international orders represent a significant revenue opportunity despite their lower volume. Expanding into additional Indian states and building repeatable international sales channels are the key opportunities identified by this dashboard.
 
 ## Author
 
