@@ -280,7 +280,7 @@ CONCATENATEX(
 
 ### Top Product by Quantity
 
-```dax
+dax
 Top Quantity Product =
 MAXX(
     TOPN(
