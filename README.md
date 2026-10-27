@@ -301,19 +301,7 @@ The Product Performance & Demand Analysis Dashboard demonstrates how Power BI ca
 
 The analysis identifies Agnijith 90 gms as the leading product, highlights revenue growth through 2025, and reveals a decline in 2026 that requires further investigation. The findings support better inventory planning, product promotion, and revenue management.
 
-**This project demonstrates practical skills in data visualization, DAX calculations, KPI development, business intelligence, and data-driven decision-making.**
 
-## 👨‍💻 Skills Demonstrated
-
-* Data Analysis
-* Microsoft Power BI
-* DAX Measures
-* KPI Development
-* Data Visualization
-* Sales Performance Analysis
-* Business Intelligence
-* Insight Generation
-* Business Recommendations
 
 
 ## Author
