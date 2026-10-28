@@ -302,7 +302,90 @@ The Product Performance & Demand Analysis Dashboard demonstrates how Power BI ca
 The analysis identifies Agnijith 90 gms as the leading product, highlights revenue growth through 2025, and reveals a decline in 2026 that requires further investigation. The findings support better inventory planning, product promotion, and revenue management.
 
 
+# Customer Purchase & Behaviour Analysis Dashboard
 
+## Project Overview
+This project turns a cleaned order export into a one-page dashboard covering customer location, purchase frequency, revenue by customer type and monthly order trends. Slicers let users filter by **order date, customer type, product name and country**.
+
+
+## KPI Cards & DAX Measures
+
+| KPI | Value |
+|---|---|
+| Total Orders | 690 |
+| Registered Customers | 323 |
+| Guest Orders | 340 |
+| Repeated Registered Customers | 21 |
+
+```DAX
+Total Orders =
+DISTINCTCOUNT ( 'padanjaly-order export cleaned'[order_id] )
+```
+
+```DAX
+Guest Orders =
+CALCULATE (
+    DISTINCTCOUNT ( 'padanjaly-order export cleaned'[order_id] ),
+    'padanjaly-order export cleaned'[Customer Type] = "Guest"
+)
+```
+
+```DAX
+Registered Customers =
+CALCULATE (
+    DISTINCTCOUNT ( 'padanjaly-order export cleaned'[customer_id] ),
+    'padanjaly-order export cleaned'[customer_id] <> 0,
+    NOT ISBLANK ( 'padanjaly-order export cleaned'[customer_id] )
+)
+```
+
+```DAX
+Repeated Registered Customers =
+COUNTROWS (
+    FILTER (
+        VALUES ( 'padanjaly-order export cleaned'[customer_id] ),
+        'padanjaly-order export cleaned'[customer_id] <> 0
+            && CALCULATE ( [Total Orders] ) > 1
+    )
+)
+```
+
+```DAX
+Customer Count =
+CALCULATE (
+    DISTINCTCOUNT ( 'padanjaly-order export cleaned'[customer_id] ),
+    'padanjaly-order export cleaned'[customer_id] <> 0,
+    NOT ISBLANK ( 'padanjaly-order export cleaned'[customer_id] )
+)
+
+Total Customer Revenue (INR) =
+CALCULATE (
+    SUM ( 'padanjaly-order export cleaned'[order_subtotal_INR] ),
+    'padanjaly-order export cleaned'[customer_id] <> 0,
+    NOT ISBLANK ( 'padanjaly-order export cleaned'[customer_id] )
+)
+```
+
+## Visuals
+| Visual | Type | Fields |
+|---|---|---|
+| Customer Distribution by Location | Clustered column chart | `billing_country_clean`; Registered Customers, Guest Orders |
+| One-Time vs Repeat Customers | Donut chart | Legend: Customer Type; Values: distinct customer count |
+| Customer Revenue by Purchase Type | Bar chart | `Purchase Type`; Total Customer Revenue (INR); tooltips: Customer Count, Total Orders |
+| Monthly Purchasing Trend | Area chart | X: order date (month-year); Y: count of `order_id` |
+
+## Key Insights
+1. **India dominates:** 276 of 323 registered customers (~85%) and 307 of 340 guest orders (~90%) are from India.
+2. **Guest orders are high:** 340 of 690 orders (~49%) are guest orders, so half of buying behaviour cannot be tracked.
+3. **Repeat rate is low:** only 21 customers (6.5%) bought more than once; 302 (93.5%) bought once.
+4. **Repeat customers are worth more:** about ₹0.2M from 6.5% of customers, roughly **2.4x** the revenue per customer of one-time buyers (₹1.2M across 302 customers).
+5. **Orders are growing, with a spike:** monthly orders rose from 2023 to 2026, peaking at about 82 around May 2026. The cause should be investigated.
+
+
+
+## Author
+**Kartik** – Aspiring Data Analyst (Python, SQL, Power BI, Excel)
+[LinkedIn](https://linkedin.com/in/kartikg05)
 
 ## Author
 
